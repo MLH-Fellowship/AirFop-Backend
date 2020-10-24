@@ -65,9 +65,22 @@ RSpec.describe 'Users Controller', type: :request do
         expect(json['password']).to be_nil
         expect(json['password_digest']).to_not be_nil
       end
-
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
+      end
+    end
+
+    context 'when the request is invalid' do
+      before { post '/users', params: valid_attributes }
+      before { post '/users', params: valid_attributes }
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a validation failure message' do
+        expect(response.body)
+          .to match(/Validation failed: Email has already been taken/)
       end
     end
   end
