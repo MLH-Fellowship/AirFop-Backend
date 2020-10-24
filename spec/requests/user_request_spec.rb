@@ -51,10 +51,26 @@ RSpec.describe 'Users Controller', type: :request do
 
   # Tests the CREATE function
   describe 'POST /users/:id' do
+    let(:valid_attributes) {
+      { first_name: 'John', last_name: 'Doe',
+        email: 'john.doe@somename.com', password: 'temppassword' } }
 
+    context 'when the request is valid' do
+      before { post '/users', params: valid_attributes }
+
+      it 'creates a user' do
+        expect(json['first_name']).to eq('John')
+        expect(json['last_name']).to eq('Doe')
+        expect(json['email']).to eq('john.doe@somename.com')
+        expect(json['password']).to be_nil
+        expect(json['password_digest']).to_not be_nil
+      end
+
+      it 'returns status code 201' do
+        expect(response).to have_http_status(201)
+      end
+    end
   end
-
-
 
   # Test suite for DELETE function
   describe 'DELETE /users/:id' do
@@ -64,6 +80,4 @@ RSpec.describe 'Users Controller', type: :request do
       expect(response).to have_http_status(204)
     end
   end
-
-
 end
