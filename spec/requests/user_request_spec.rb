@@ -55,4 +55,15 @@ RSpec.describe 'Users Controller', type: :request do
   end
 
 
+
+  # Test suite for DELETE function
+  describe 'DELETE /users/:id' do
+    before { delete "/users/#{user_id}" }
+
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
+    end
+  end
+
+
 end
