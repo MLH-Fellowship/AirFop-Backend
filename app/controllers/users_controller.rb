@@ -11,7 +11,9 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create!(user_params)
+    @user = User.new(user_params)
+    @user.email = @user.email.downcase
+    @user.save!
     json_response(@user, :created)
   end
 
