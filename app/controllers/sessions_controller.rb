@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   # Creates a new session
   def create
     user = User.find_by(email: params[:email].downcase) # TODO may need to rethink this
-    if user && user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       session[:user_id] = user.id
     else
       print 'Error' # TODO send some sort of error
