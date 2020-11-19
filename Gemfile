@@ -18,6 +18,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Used for authentication
 gem 'devise'
+# Used for token authentication
+gem 'simple_token_authentication', '~> 1.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
