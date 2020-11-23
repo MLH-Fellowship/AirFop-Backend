@@ -1,5 +1,14 @@
+# Model for default users
 class User < ApplicationRecord
-  has_secure_password
-  validates_presence_of :first_name, :last_name, :email, :password_digest
-  validates :email, uniqueness: { case_sensitive: false }
+
+  acts_as_token_authenticatable
+
+  validates_presence_of :first_name, :last_name, :email, :password
+  validates :email, uniqueness: true
+  validates :password, length: { minimum: 6 }
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
