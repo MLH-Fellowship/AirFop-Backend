@@ -28,7 +28,7 @@ Project.create(project_num: 3, project_name: 'Project Three',
 Project.create(project_num: 4, project_name: 'Project Four',
                phase: 'Phase One', award_date: Date.today, pop: 'today', customer: 'Iron Man',
                contractor: 'Depeartment of Defense', pm: 'Pepper Potts', status: 'Yellow', status_comment: '',
-               funding_source: 'Gotham Treasurey')
+               funding_source: 'Stark Industries')
 
 Project.create(project_num: 5, project_name: 'Project Five',
                phase: 'Phase Three', award_date: Date.today, pop: 'today', customer: 'Spiderman', contractor: 'Zendaya',
