@@ -10,7 +10,7 @@ Docs for USER API
 
 # CREATE a User
 
-**Route:** `POST /users/:id` <---- with a JSON in the body
+**Route:** `POST /users/` <---- with a JSON in the body
 
 * Input JSON Structure: `{"first_name":string, "last_name":string, 
 "email":string, "password:string, ""is_admin": boolean}`

@@ -11,7 +11,7 @@ Docs for Project API
 
 # CREATE a Project
 
-**Route:** `POST /projects/:id` <---- with a JSON in the body
+**Route:** `POST /projects/` <---- with a JSON in the body
 
 * Input JSON Structure: `{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
                          "contractor": string, "pm": string, "status": string, "status_comment": string}`
