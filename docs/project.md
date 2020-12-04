@@ -5,7 +5,7 @@ Docs for Project API
 **Route**: `GET /projects/:id`
 
 **Response**: `{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
- "contractor": string, "pm": string, "status": string, "status_comment": string}`
+ "contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int, "funding_source": string}`
 
 ---
 
@@ -14,10 +14,11 @@ Docs for Project API
 **Route:** `POST /projects/` <---- with a JSON in the body
 
 * Input JSON Structure: `{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
-                         "contractor": string, "pm": string, "status": string, "status_comment": string}`
+                         "contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int, "funding_source": string}`
 
-**Response**: ``{"id": int, "project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
-                "contractor": string, "pm": string, "status": string, "status_comment": string}``
+**Response**: `{"id": int, "project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
+                "contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int, 
+"funding_source": string}`
 
 ---
 
@@ -25,8 +26,9 @@ Docs for Project API
 
 **Route:** `PATCH or PUT /projects/:id` <---- with a JSON in the body
 
-* Input JSON Structure: ``{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
-                          "contractor": string, "pm": string, "status": string, "status_comment": string}``
+* Input JSON Structure: `{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
+                          "contractor": string, "pm": string, "status": string, "status_comment": string,
+  "project_num": int, "funding_source": string}`
 
 **Response:** Nothing. Just an OK error code
 
