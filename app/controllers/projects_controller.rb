@@ -18,7 +18,9 @@ class ProjectsController < ApplicationController
 
   private
 
+  # White list params
   def project_params
-    params.permit(:project_name, :phase, :award_date, :pop, :customer, :contractor, :pm, :status, :status_comment)
+    params.permit(:project_name, :phase, :award_date, :pop, :customer,
+                  :contractor, :pm, :status, :status_comment, :project_num, :funding_source)
   end
 end
