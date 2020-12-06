@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     @user.update(user_params)
     head :no_content
   end
@@ -19,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:first_name, :last_name, :email, :password, :is_admin)
+    params.permit(:id, :first_name, :last_name, :email, :password, :is_admin)
   end
 end
