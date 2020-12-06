@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project = Project.find(params[:id])
     @project.update(project_params)
     head :no_content
   end
@@ -26,7 +27,7 @@ class ProjectsController < ApplicationController
 
   # White list params
   def project_params
-    params.permit(:project_name, :phase, :award_date, :pop, :customer,
+    params.permit(:id, :project_name, :phase, :award_date, :pop, :customer,
                   :contractor, :pm, :status, :status_comment, :project_num, :funding_source)
   end
 end
