@@ -10,6 +10,15 @@ Docs for Project API
 
 ---
 
+# Search for a Project by name
+**Route**: `GET /proj_by_name/:name`
+
+**Response**: `{"id": integer, "project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
+"contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int,
+"funding_source": string, "name": string}`
+
+---
+
 # CREATE a Project
 
 **Route:** `POST /projects/` <---- with a JSON in the body
