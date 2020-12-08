@@ -5,7 +5,8 @@ Docs for Project API
 **Route**: `GET /projects/:id`
 
 **Response**: `{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
- "contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int, "funding_source": string}`
+ "contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int, 
+"funding_source": string, "name": string}`
 
 ---
 
@@ -18,7 +19,7 @@ Docs for Project API
 
 **Response**: `{"id": int, "project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
                 "contractor": string, "pm": string, "status": string, "status_comment": string, "project_num": int, 
-"funding_source": string}`
+"funding_source": string, "name": string}`
 
 ---
 
@@ -28,7 +29,7 @@ Docs for Project API
 
 * Input JSON Structure: `{"project_name":string, "phase":string, "award_date": date," "pop":string, "customer": string,
                           "contractor": string, "pm": string, "status": string, "status_comment": string,
-  "project_num": int, "funding_source": string}`
+  "project_num": int, "funding_source": string, "name": string}`
 
 **Response:** Nothing. Just an OK error code
 
