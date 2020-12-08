@@ -22,6 +22,12 @@ class ProjectsController < ApplicationController
     head :no_content
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    head :no_content
+  end
+
 
   private
 

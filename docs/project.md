@@ -33,4 +33,11 @@ Docs for Project API
 **Response:** Nothing. Just an OK error code
 
 Note, you don't have to pass every field in the update JSON. The project will only update the fields that are given. 
+
+# DELETE a Project
+**Route**: `DELETE /projects/:id`
+
+**Response**: `This returns nothing`
+
+---
  
