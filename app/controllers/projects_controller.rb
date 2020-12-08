@@ -28,6 +28,12 @@ class ProjectsController < ApplicationController
     head :no_content
   end
 
+  def proj_by_name
+    name_param = CGI.unescape(params[:name])
+    @project = Project.where(project_name: name_param)
+    json_response(@project)
+  end
+
 
   private
 

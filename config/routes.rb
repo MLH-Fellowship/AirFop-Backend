@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :projects
 
   resources :sessions, only: %i[create destroy]
+
+  get '/proj_by_name/:name', to: 'projects#proj_by_name'
 end
