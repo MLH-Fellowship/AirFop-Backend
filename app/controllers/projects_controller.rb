@@ -34,12 +34,38 @@ class ProjectsController < ApplicationController
     json_response(@project)
   end
 
+  def query
+    filter_ops = params[:filter]
+    puts 'Called Query'
+    if filter_ops
+      puts 'Inside the first if statement'
+      status_ops = params[:filter][:status]
+      unless status_ops.nil?
+        puts 'Inside the second if statement'
+        ops_array = []
+        status_ops.each do |key, value|
+          if value.downcase == 'true'
+            ops_array.append(key)
+          end
+        end
+
+        # TODO get the actual records
+        puts "This is ops array"
+        puts ops_array
+        status_results = ops_array.join(' or status = ')
+        @project = Project.where("status = '#{ops_array[0]}'")
+        json_response(@project)
+      end
+    end
+  end
+
 
   private
 
   # White list params
   def project_params
     params.permit(:id, :project_name, :phase, :award_date, :pop, :customer,
-                  :contractor, :pm, :status, :status_comment, :project_num, :funding_source, :name)
+                  :contractor, :pm, :status, :status_comment, :project_num, :funding_source,
+                  :name, :filter)
   end
 end

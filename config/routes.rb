@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # Returns a user with an associated email
   get '/user_by_email/', to: 'users#user_by_email'
 
+  get '/query/', to: 'projects#query'
 end
