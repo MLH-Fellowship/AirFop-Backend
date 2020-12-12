@@ -50,8 +50,10 @@ class ProjectsController < ApplicationController
             ops_string << "status = '#{key}' "
           end
         end
-        @project = Project.where(ops_string)
-        json_response(@project)
+        unless ops_string.empty?
+          @project = Project.where(ops_string)
+          json_response(@project)
+        end
       end
     end
   end
