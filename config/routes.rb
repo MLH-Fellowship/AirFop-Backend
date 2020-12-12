@@ -8,5 +8,10 @@ Rails.application.routes.draw do
 
   resources :sessions, only: %i[create destroy]
 
+  # Returns the project with an associated name
   get '/proj_by_name/:name', to: 'projects#proj_by_name'
+
+  # Returns a user with an associated email
+  get '/user_by_email/', to: 'users#user_by_email'
+
 end
