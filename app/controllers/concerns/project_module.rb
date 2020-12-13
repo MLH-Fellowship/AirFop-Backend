@@ -10,13 +10,15 @@ module ProjectModule
       start_time = nil
       end_time = nil
       if date_string != 'null' && !date_string.nil?
+        puts 'Inside of the time statement'
         date_present = true
-        start_time = Time.parse(params[:filter][:date][:start])
-        end_time = Time.parse(params[:filter][:date][:end])
+        start_time = params[:filter][:date][:start].to_date
+        end_time = params[:filter][:date][:end].to_date
       end
 
       @project = nil
       if !ops_string.empty? && date_present
+        puts "Inside of the final selection"
         @project = Project.where(ops_string, { award_date: start_time..end_time })
       end
 
