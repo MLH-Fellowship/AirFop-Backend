@@ -17,7 +17,7 @@ module ProjectModule
 
       @project = nil
       if !ops_string.empty? && date_present
-        @project = Project.where(ops_string, award_date: start_time..end_time)
+        @project = Project.where(ops_string, { award_date: start_time..end_time })
       end
 
       unless ops_string.empty?
