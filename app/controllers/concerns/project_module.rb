@@ -18,14 +18,15 @@ module ProjectModule
 
       @project = nil
       if !ops_string.empty? && date_present
-        puts "Inside of the final selection"
-        @project = Project.where(ops_string, { award_date: start_time..end_time })
+        puts 'Inside of the final selection'
+        @project = Project.where(ops_string).where(award_date: start_time..end_time)
       end
 
-      unless ops_string.empty?
-        @project = Project.where(ops_string)
-        json_response(@project)
-      end
+      # unless ops_string.empty?
+      #   @project = Project.where(ops_string)
+      #   json_response(@project)
+      # end
+      json_response(@project)
     end
   end
 
