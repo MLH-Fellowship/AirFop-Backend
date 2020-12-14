@@ -1,6 +1,6 @@
 # Functions for the Projects controller
 module ProjectModule
-  require 'time'
+  # require 'time'
 
   def process_filter(params)
     filter_ops = params[:filter]
