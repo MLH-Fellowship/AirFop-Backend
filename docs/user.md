@@ -30,3 +30,18 @@ Docs for USER API
 
 Note, you don't have to pass every field in the update JSON. The project will only update the fields that are given. 
  
+---
+
+# GET User by email
+
+**Route:** `GET /user_by_email/` <----- with a JSON in the body 
+
+* Example input JSON Structure: 
+
+```json
+{
+  "email": "john@doe.gov"
+}
+```
+
+**Response**: A JSON containing the user's information
