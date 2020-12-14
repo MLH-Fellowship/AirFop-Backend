@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   # Gets the User with the associated email
   def user_by_email
     @user = User.where(email: params[:email])
-    puts params[:email]
     json_response(@user)
   end
 
