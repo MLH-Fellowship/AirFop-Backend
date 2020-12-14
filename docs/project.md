@@ -53,58 +53,20 @@ Note, you don't have to pass every field in the update JSON. The project will on
 
 # QUERY for a project
 
-**Route:** `GET /query/` <---- with a JSON in the body
+**Route:** `GET /query/?....` <--- Key, Value params 
 
-* Valid Input JSON Structure: 
+* To query for a project by status or date, make sure to set "date" and "status" to something other than "null". 
 
-```json
-{
-    "filter": {
-        "date": {
-            "start": "day/month/year",
-            "end": "day/month/year"
-        },
-        "status": {
-            "Green": "boolean",
-            "Yellow": "boolean",
-            "Red": "boolean"
-        }
-    }
-}
-```
+This route accepts key, value params to search for projects with similar attributes. 
 
-* If you'd like to omit certain filter attributes, insert a "null" after the name of the attribute. For example: 
+Examples: 
 
 
-```json
-{
-    "filter": {
-        "date": "null",
-        "status": {
-            "Green": "false",
-            "Yellow": "true",
-            "Red": "true"
-        }
-    }
-}
-```
+To search for all the Yellow status records that fall between two dates, the URL will be: 
+`localhost:3000/query/?status=ok&Red=false&Green=false&Yellow=true&date=ok&start=11/04/2020&end=05/04/2021`
 
-* This will execute a search that will only look for the projects with statuses between yellow and red. If you wanted
-to only search for projects between two dates, then do something like the following:
-
-```json
-{
-    "filter": {
-        "date": {
-            "start": "11/04/2020",
-            "end": "05/04/2021"
-        },
-        "status": "null"
-    }
-}
-```
-
-This will execute a search for all projects between 4/11/2020 and 4/5/2021.
+To search for all the Yellow to Red records:
+`localhost:3000/query/?status=ok&Red=true&Yellow=true&date=null`
 
 **Caution: There are some quirks to the query operation:**
 
