@@ -30,7 +30,7 @@ module ProjectModule
   # Generate the SQL string for status
   def gen_status_string(params)
     ops_string = ''
-    if params != 'null'
+    if params['status'] != 'null'
       status_keys = { 'Green' => 'false', 'Yellow' => 'false', 'Red' => 'false' }
 
       status_keys['Green'] = params['Green'] if params.key?('Green')
