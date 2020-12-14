@@ -3,15 +3,15 @@ module ProjectModule
 
   def process_filter(params)
     ops_string = gen_status_string(params)
-    date_string = params[:date]
+    date_string = params['date']
     date_present = false
     start_time = nil
     end_time = nil
     # Processes the dates
     if date_string != 'null' && !date_string.nil?
       date_present = true
-      start_time = params[:start_time].to_date
-      end_time = params[:end_time].to_date
+      start_time = params['start'].to_date
+      end_time = params['end'].to_date
     end
 
     @project = nil
