@@ -12,7 +12,6 @@ module ProjectModule
       end_time = nil
       # Processes the dates
       if date_string != 'null' && !date_string.nil?
-        puts 'Inside of the time statement'
         date_present = true
         start_time = params[:filter][:date][:start].to_date
         end_time = params[:filter][:date][:end].to_date
