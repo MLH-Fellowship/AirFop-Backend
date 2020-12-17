@@ -40,6 +40,15 @@ class ProjectsController < ApplicationController
     process_filter(params)
   end
 
+  def open
+    @fund = params[:funding]
+    @proj = params[:project]
+
+    @dir = "../projects/#{@fund}/#{@proj}"
+    @res = `open #{@dir}`
+
+    json_response(@dir)
+  end
 
   private
 
