@@ -1,6 +1,7 @@
 AirFop Backend
 ===
-This project represents the backend for the AirFop project. 
+This project represents the backend for the AirFop project. The Project "AirFop-Dasboard" needs to be running alongside
+this project in order for both projects to work as intended.
 
 
 ## Getting Started
@@ -35,5 +36,5 @@ For documentation about all the HTTP requests, go to this
 
 ## What's left to be done
 
-A TODO doc was created to provide guidence to whoever picks up this project next. That doc can be viewed 
+A TODO doc was created to provide guidance to whoever picks up this project next. That doc can be viewed 
 [here](https://github.com/MLH-Fellowship/AirFop-Backend/blob/master/docs/TODO.md).
