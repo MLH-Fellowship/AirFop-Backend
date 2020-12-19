@@ -34,3 +34,6 @@ For documentation about all the HTTP requests, go to this
 [link](https://github.com/MLH-Fellowship/AirFop-Backend/tree/master/docs).
 
 ## What's left to be done
+
+A TODO doc was created to provide guidence to whoever picks up this project next. That doc can be viewed 
+[here](https://github.com/MLH-Fellowship/AirFop-Backend/blob/master/docs/TODO.md).
