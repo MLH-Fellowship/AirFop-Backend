@@ -32,3 +32,5 @@ This JSON is meant to be consumed by the front-end project
 
 For documentation about all the HTTP requests, go to this 
 [link](https://github.com/MLH-Fellowship/AirFop-Backend/tree/master/docs).
+
+## What's left to be done
