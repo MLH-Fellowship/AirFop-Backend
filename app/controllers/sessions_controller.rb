@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       payload = @user.as_json(only: %i[first_name last_name email authentication_token])
       token = JWT.encode payload, hmac_secret, 'HS256'
       token_hash = { token: token}
-      render json: token_hash
+      json_response(token_hash, :created)
     else
       head :unauthorized
     end
