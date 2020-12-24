@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     hmac_secret = 'ThisIsASecret'
     @user = User.find_by_email! params[:email]
     if @user&.valid_password?(params[:password])
-      payload = @user.as_json(only: %i[first_name last_name email authentication_token])
+      payload = @user.as_json(only: %i[first_name last_name email is_admin authentication_token])
       token = JWT.encode payload, hmac_secret, 'HS256'
       token_hash = { token: token}
       json_response(token_hash, :created)
