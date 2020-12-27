@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   resources :projects
 
-  resources :sessions, only: %i[create destroy]
+  resources :sessions, only: %i[create]
+
+  # Route that allows sessions to be destroyed
+  delete '/sessions/', to: 'sessions#destroy'
 
   # Returns the project with an associated name
   get '/proj_by_name/:name', to: 'projects#proj_by_name'

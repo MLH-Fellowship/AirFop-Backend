@@ -4,7 +4,7 @@ Docs for SESSION API (Log in and Log out)
 # Log In
 **Route**: `POST /sessions/` <---- JSON in the body
 
-* Input JSON Structure: `{"email": string, "password"}`
+* Input JSON Structure: `{"email": string, "password": string}`
 
 If Valid: `{"id": int, "email": string, "authentication_token": string}`
 

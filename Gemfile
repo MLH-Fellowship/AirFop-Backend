@@ -21,6 +21,9 @@ gem 'devise'
 # Used for token authentication
 gem 'simple_token_authentication', '~> 1.0'
 
+# For JSON Web Token Authorizations
+gem 'jwt'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
