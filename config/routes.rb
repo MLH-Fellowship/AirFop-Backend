@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get '/user_by_email/', to: 'users#user_by_email'
 
   get '/query/', to: 'projects#query'
+  
+  get '/open/:funding/:project', to: 'projects#open'
+
 end
